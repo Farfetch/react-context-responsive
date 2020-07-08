@@ -181,8 +181,6 @@ By sending us your contributions, you are agreeing that your contribution is mad
 * [sofiacteixeira](https://github.com/sofiacteixeira)
 * [themariamarques](https://github.com/themariamarques)
 
-@maria.marques @sofia.cruz @dino.pereira @leandro.soares
-
 ## License
 
 [MIT](../docs/LICENSE)
