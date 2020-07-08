@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getQueriesObjects() should return the correct query object for the _initial breakpoint 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "is": Object {
+    "_initial": true,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "lessThan": Object {
+    "_initial": false,
+    "lg": true,
+    "md": true,
+    "sm": true,
+    "xl": true,
+    "xs": true,
+  },
+}
+`;
+
+exports[`getQueriesObjects() should return the correct query object for the lg breakpoint 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": false,
+    "md": true,
+    "sm": true,
+    "xl": false,
+    "xs": true,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": true,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "lessThan": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": true,
+    "xs": false,
+  },
+}
+`;
+
+exports[`getQueriesObjects() should return the correct query object for the md breakpoint 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": false,
+    "md": false,
+    "sm": true,
+    "xl": false,
+    "xs": true,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": false,
+    "md": true,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "lessThan": Object {
+    "_initial": false,
+    "lg": true,
+    "md": false,
+    "sm": false,
+    "xl": true,
+    "xs": false,
+  },
+}
+`;
+
+exports[`getQueriesObjects() should return the correct query object for the sm breakpoint 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": true,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": true,
+    "xl": false,
+    "xs": false,
+  },
+  "lessThan": Object {
+    "_initial": false,
+    "lg": true,
+    "md": true,
+    "sm": false,
+    "xl": true,
+    "xs": false,
+  },
+}
+`;
+
+exports[`getQueriesObjects() should return the correct query object for the xl breakpoint 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": true,
+    "md": true,
+    "sm": true,
+    "xl": false,
+    "xs": true,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": true,
+    "xs": false,
+  },
+  "lessThan": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+}
+`;
+
+exports[`getQueriesObjects() should return the correct query object for the xs breakpoint 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": true,
+  },
+  "lessThan": Object {
+    "_initial": false,
+    "lg": true,
+    "md": true,
+    "sm": true,
+    "xl": true,
+    "xs": false,
+  },
+}
+`;

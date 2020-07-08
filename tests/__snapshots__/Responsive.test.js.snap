@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Responsive /> should render correctly 1`] = `
+<DocumentFragment>
+  <h1>
+    Mock test
+  </h1>
+</DocumentFragment>
+`;

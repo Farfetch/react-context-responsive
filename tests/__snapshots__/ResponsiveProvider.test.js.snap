@@ -1,0 +1,449 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ResponsiveProvider /> should pass to the context the correct value when the width is 240 and the height is 320, after calculation 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "is": Object {
+    "_initial": true,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "isCalculated": true,
+  "lessThan": Object {
+    "_initial": false,
+    "lg": true,
+    "md": true,
+    "sm": true,
+    "xl": true,
+    "xs": true,
+  },
+  "mediaType": "_initial",
+  "orientation": "portrait",
+}
+`;
+
+exports[`<ResponsiveProvider /> should pass to the context the correct value when the width is 320 and the height is 240, after calculation 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": true,
+  },
+  "isCalculated": true,
+  "lessThan": Object {
+    "_initial": false,
+    "lg": true,
+    "md": true,
+    "sm": true,
+    "xl": true,
+    "xs": false,
+  },
+  "mediaType": "xs",
+  "orientation": "landscape",
+}
+`;
+
+exports[`<ResponsiveProvider /> should pass to the context the correct value when the width is 320 and the height is 568, after calculation 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": true,
+  },
+  "isCalculated": true,
+  "lessThan": Object {
+    "_initial": false,
+    "lg": true,
+    "md": true,
+    "sm": true,
+    "xl": true,
+    "xs": false,
+  },
+  "mediaType": "xs",
+  "orientation": "portrait",
+}
+`;
+
+exports[`<ResponsiveProvider /> should pass to the context the correct value when the width is 375 and the height is 812, after calculation 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": true,
+  },
+  "isCalculated": true,
+  "lessThan": Object {
+    "_initial": false,
+    "lg": true,
+    "md": true,
+    "sm": true,
+    "xl": true,
+    "xs": false,
+  },
+  "mediaType": "xs",
+  "orientation": "portrait",
+}
+`;
+
+exports[`<ResponsiveProvider /> should pass to the context the correct value when the width is 768 and the height is 1024, after calculation 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": true,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": true,
+    "xl": false,
+    "xs": false,
+  },
+  "isCalculated": true,
+  "lessThan": Object {
+    "_initial": false,
+    "lg": true,
+    "md": true,
+    "sm": false,
+    "xl": true,
+    "xs": false,
+  },
+  "mediaType": "sm",
+  "orientation": "portrait",
+}
+`;
+
+exports[`<ResponsiveProvider /> should pass to the context the correct value when the width is 812 and the height is 375, after calculation 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": true,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": true,
+    "xl": false,
+    "xs": false,
+  },
+  "isCalculated": true,
+  "lessThan": Object {
+    "_initial": false,
+    "lg": true,
+    "md": true,
+    "sm": false,
+    "xl": true,
+    "xs": false,
+  },
+  "mediaType": "sm",
+  "orientation": "landscape",
+}
+`;
+
+exports[`<ResponsiveProvider /> should pass to the context the correct value when the width is 1024 and the height is 768, after calculation 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": false,
+    "md": false,
+    "sm": true,
+    "xl": false,
+    "xs": true,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": false,
+    "md": true,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "isCalculated": true,
+  "lessThan": Object {
+    "_initial": false,
+    "lg": true,
+    "md": false,
+    "sm": false,
+    "xl": true,
+    "xs": false,
+  },
+  "mediaType": "md",
+  "orientation": "landscape",
+}
+`;
+
+exports[`<ResponsiveProvider /> should pass to the context the correct value when the width is 1024 and the height is 1366, after calculation 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": false,
+    "md": false,
+    "sm": true,
+    "xl": false,
+    "xs": true,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": false,
+    "md": true,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "isCalculated": true,
+  "lessThan": Object {
+    "_initial": false,
+    "lg": true,
+    "md": false,
+    "sm": false,
+    "xl": true,
+    "xs": false,
+  },
+  "mediaType": "md",
+  "orientation": "portrait",
+}
+`;
+
+exports[`<ResponsiveProvider /> should pass to the context the correct value when the width is 1336 and the height is 1024, after calculation 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": false,
+    "md": true,
+    "sm": true,
+    "xl": false,
+    "xs": true,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": true,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "isCalculated": true,
+  "lessThan": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": true,
+    "xs": false,
+  },
+  "mediaType": "lg",
+  "orientation": "landscape",
+}
+`;
+
+exports[`<ResponsiveProvider /> should pass to the context the correct value when the width is 1440 and the height is 900, after calculation 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": false,
+    "md": true,
+    "sm": true,
+    "xl": false,
+    "xs": true,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": true,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "isCalculated": true,
+  "lessThan": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": true,
+    "xs": false,
+  },
+  "mediaType": "lg",
+  "orientation": "landscape",
+}
+`;
+
+exports[`<ResponsiveProvider /> should pass to the context the correct value when the width is 2560 and the height is 1440, after calculation 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": true,
+    "md": true,
+    "sm": true,
+    "xl": false,
+    "xs": true,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": true,
+    "xs": false,
+  },
+  "isCalculated": true,
+  "lessThan": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "mediaType": "xl",
+  "orientation": "landscape",
+}
+`;
+
+exports[`<ResponsiveProvider /> should pass to the context the correct values, on resize 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": false,
+    "md": true,
+    "sm": true,
+    "xl": false,
+    "xs": true,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": true,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "isCalculated": true,
+  "lessThan": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": true,
+    "xs": false,
+  },
+  "mediaType": "lg",
+  "orientation": "landscape",
+}
+`;
+
+exports[`<ResponsiveProvider /> should pass to the context the default values, before calculation 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": true,
+  },
+  "isCalculated": false,
+  "lessThan": Object {
+    "_initial": false,
+    "lg": true,
+    "md": true,
+    "sm": true,
+    "xl": true,
+    "xs": false,
+  },
+  "mediaType": "xs",
+  "orientation": null,
+}
+`;
+
+exports[`<ResponsiveProvider /> should pass to the context the props values, before calculation, if available 1`] = `
+Object {
+  "greaterThan": Object {
+    "_initial": true,
+    "lg": true,
+    "md": true,
+    "sm": true,
+    "xl": false,
+    "xs": true,
+  },
+  "is": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": true,
+    "xs": false,
+  },
+  "isCalculated": false,
+  "lessThan": Object {
+    "_initial": false,
+    "lg": false,
+    "md": false,
+    "sm": false,
+    "xl": false,
+    "xs": false,
+  },
+  "mediaType": "xl",
+  "orientation": "portrait",
+}
+`;
