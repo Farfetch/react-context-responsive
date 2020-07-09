@@ -12,13 +12,13 @@
     }],
     "@semantic-release/npm",
     ["@semantic-release/git", {
-      "assets": ["es", "lib", "docs", "yarn.lock"],
+      "assets": ["docs", "yarn.lock"],
       "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
     }],
     ["@semantic-release/github", {
         "assets": [
-            {"path": "es/**", "label": "ES Modules Distribution"},
-            {"path": "lib/**", "label": "CJS Distribution"},
+            {"path": "es", "label": "ES Modules Distribution"},
+            {"path": "lib", "label": "CJS Distribution"},
             {"path": "docs/CHANGELOG.md", "label": "Changelog"},
         ]
     }]
