@@ -1,4 +1,4 @@
-name: Test PR
+name: Pull Request
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    name: Test
+    name: Test Branch
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
