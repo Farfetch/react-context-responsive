@@ -3,6 +3,18 @@
   "version": "1.0.0",
   "description": "A responsive API using React's Context API",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "responsive",
+    "context",
+    "css",
+    "viewport",
+    "mobile",
+    "media queries",
+    "media query",
+    "matchMedia",
+    "component"
+  ],
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "source": "./src/index.js",
