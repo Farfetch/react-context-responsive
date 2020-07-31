@@ -357,15 +357,15 @@ Object {
   "greaterThan": Object {
     "_initial": true,
     "lg": false,
-    "md": true,
+    "md": false,
     "sm": true,
     "xl": false,
     "xs": true,
   },
   "is": Object {
     "_initial": false,
-    "lg": true,
-    "md": false,
+    "lg": false,
+    "md": true,
     "sm": false,
     "xl": false,
     "xs": false,
@@ -373,13 +373,13 @@ Object {
   "isCalculated": true,
   "lessThan": Object {
     "_initial": false,
-    "lg": false,
+    "lg": true,
     "md": false,
     "sm": false,
     "xl": true,
     "xs": false,
   },
-  "mediaType": "lg",
+  "mediaType": "md",
   "orientation": "landscape",
 }
 `;

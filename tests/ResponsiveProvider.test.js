@@ -1,4 +1,5 @@
 import { act, cleanup, render } from '@testing-library/react';
+import { breakpoints, breakpointsMax } from './__fixtures__/mockBreakpoints';
 import {
     mockMatchMedia,
     unmockMatchMedia,
@@ -7,12 +8,15 @@ import React from 'react';
 import ResponsiveProvider from '../src/ResponsiveProvider';
 import mockContextContent from './__fixtures__/mockContextContent';
 
+const props = { breakpoints, breakpointsMax };
+
 jest.mock('../src/ResponsiveContext');
 
 global.console = {
     log: jest.fn(),
     group: jest.fn(),
     groupEnd: jest.fn(),
+    error: jest.fn(),
 };
 
 describe('<ResponsiveProvider />', () => {
@@ -45,7 +49,7 @@ describe('<ResponsiveProvider />', () => {
             window.resizeTo(width, height);
 
             render(
-                <ResponsiveProvider>
+                <ResponsiveProvider {...props}>
                     <div>Responsive test</div>
                 </ResponsiveProvider>
             );
@@ -63,7 +67,7 @@ describe('<ResponsiveProvider />', () => {
 
     test('should pass to the context the default values, before calculation', () => {
         render(
-            <ResponsiveProvider>
+            <ResponsiveProvider {...props}>
                 <div>Responsive test</div>
             </ResponsiveProvider>
         );
@@ -77,6 +81,7 @@ describe('<ResponsiveProvider />', () => {
     test('should pass to the context the props values, before calculation, if available', () => {
         render(
             <ResponsiveProvider
+                {...props}
                 initialMediaType={'xl'}
                 defaultOrientation={'portrait'}
             >
@@ -93,7 +98,7 @@ describe('<ResponsiveProvider />', () => {
     test('should pass to the context the correct values, on resize', () => {
         window.resizeTo(1024, 768);
         render(
-            <ResponsiveProvider>
+            <ResponsiveProvider {...props}>
                 <div>Responsive test</div>
             </ResponsiveProvider>
         );
@@ -104,7 +109,7 @@ describe('<ResponsiveProvider />', () => {
 
         const { default: Context } = require('../src/ResponsiveContext');
 
-        const passedValues = Context.Provider.mock.calls[2][0].value;
+        const passedValues = Context.Provider.mock.calls[1][0].value;
 
         expect(passedValues).toMatchSnapshot();
     });
@@ -113,7 +118,7 @@ describe('<ResponsiveProvider />', () => {
         window.resizeTo(1024, 768);
 
         const { unmount } = render(
-            <ResponsiveProvider>
+            <ResponsiveProvider {...props}>
                 <div>Responsive test</div>
             </ResponsiveProvider>
         );
@@ -148,11 +153,10 @@ describe('<ResponsiveProvider />', () => {
     });
 
     test('should not call console.log in the test environment', () => {
-        // Set this as prod environment
         window.resizeTo(1024, 768);
 
         render(
-            <ResponsiveProvider>
+            <ResponsiveProvider {...props}>
                 <div>Test</div>
             </ResponsiveProvider>
         );
@@ -168,7 +172,7 @@ describe('<ResponsiveProvider />', () => {
         window.resizeTo(1024, 768);
 
         const { unmount } = render(
-            <ResponsiveProvider>
+            <ResponsiveProvider {...props}>
                 <div>Test</div>
             </ResponsiveProvider>
         );
