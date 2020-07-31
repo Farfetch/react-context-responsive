@@ -61,7 +61,7 @@ export const getMediaqueries = (breakpoints, breakpointsMax, breakpointNames) =>
                 ...acc,
                 [breakpointName]: `(min-width: ${breakpoints[breakpointName]})${
                     nextBreakpointName
-                        ? `and (max-width: ${breakpointsMax[nextBreakpointName]})`
+                        ? ` and (max-width: ${breakpointsMax[nextBreakpointName]})`
                         : ''
                 }`,
             };
