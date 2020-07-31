@@ -1,4 +1,5 @@
 import { Responsive, ResponsiveProvider } from '../src';
+import { breakpoints, breakpointsMax } from './__fixtures__/mockBreakpoints';
 import { cleanup, render } from '@testing-library/react';
 import {
     mockMatchMedia,
@@ -6,6 +7,8 @@ import {
 } from './__fixtures__/mockMatchMedia';
 import React from 'react';
 import mockContextContent from './__fixtures__/mockContextContent';
+
+const props = { breakpoints, breakpointsMax };
 
 describe('<Responsive />', () => {
     beforeEach(() => {
@@ -22,7 +25,7 @@ describe('<Responsive />', () => {
         const mockRenderProp = jest.fn(() => <h1>Mock test</h1>);
 
         const { asFragment } = render(
-            <ResponsiveProvider>
+            <ResponsiveProvider {...props}>
                 <Responsive>{mockRenderProp}</Responsive>
             </ResponsiveProvider>
         );
@@ -35,7 +38,7 @@ describe('<Responsive />', () => {
         const mockRenderProp = jest.fn(() => null);
 
         render(
-            <ResponsiveProvider>
+            <ResponsiveProvider {...props}>
                 <Responsive>{mockRenderProp}</Responsive>
             </ResponsiveProvider>
         );

@@ -1,4 +1,5 @@
 import { ResponsiveProvider, withIsMobile } from '../src';
+import { breakpoints, breakpointsMax } from './__fixtures__/mockBreakpoints';
 import { cleanup, render } from '@testing-library/react';
 import {
     mockMatchMedia,
@@ -6,7 +7,9 @@ import {
 } from './__fixtures__/mockMatchMedia';
 import React from 'react';
 
-describe('withResponsive()', () => {
+const props = { breakpoints, breakpointsMax };
+
+describe('withIsMobile()', () => {
     beforeEach(() => {
         jest.clearAllMocks();
         mockMatchMedia();
@@ -23,7 +26,7 @@ describe('withResponsive()', () => {
         const MockComponentWithIsMobile = withIsMobile(MockComponent);
 
         const { asFragment } = render(
-            <ResponsiveProvider>
+            <ResponsiveProvider {...props}>
                 <MockComponentWithIsMobile />
             </ResponsiveProvider>
         );
@@ -32,19 +35,19 @@ describe('withResponsive()', () => {
     });
 
     test('should pass the values to the `isMobile` and `isCalculated` props correctly', () => {
-        window.resizeTo(1024, 768);
+        window.resizeTo(959, 768);
         const MockComponent = jest.fn(() => <h1>Mock test</h1>);
         const MockComponentWithIsMobile = withIsMobile(MockComponent);
 
         render(
-            <ResponsiveProvider>
+            <ResponsiveProvider {...props}>
                 <MockComponentWithIsMobile />
             </ResponsiveProvider>
         );
 
         expect(MockComponent).toHaveBeenLastCalledWith(
             {
-                isMobile: false,
+                isMobile: true,
                 isCalculated: true,
             },
             {}
@@ -57,7 +60,7 @@ describe('withResponsive()', () => {
         const MockComponentWithIsMobile = withIsMobile(MockComponent);
 
         render(
-            <ResponsiveProvider>
+            <ResponsiveProvider {...props}>
                 <MockComponentWithIsMobile test={'hello'} myProp={'world'} />
             </ResponsiveProvider>
         );

@@ -1,4 +1,5 @@
 import { ResponsiveProvider, withResponsive } from '../src';
+import { breakpoints, breakpointsMax } from './__fixtures__/mockBreakpoints';
 import { cleanup, render } from '@testing-library/react';
 import {
     mockMatchMedia,
@@ -6,6 +7,8 @@ import {
 } from './__fixtures__/mockMatchMedia';
 import React from 'react';
 import mockContextContent from './__fixtures__/mockContextContent';
+
+const props = { breakpoints, breakpointsMax };
 
 describe('withResponsive()', () => {
     beforeEach(() => {
@@ -24,7 +27,7 @@ describe('withResponsive()', () => {
         const MockComponentWithResponsive = withResponsive(MockComponent);
 
         const { asFragment } = render(
-            <ResponsiveProvider>
+            <ResponsiveProvider {...props}>
                 <MockComponentWithResponsive />
             </ResponsiveProvider>
         );
@@ -38,7 +41,7 @@ describe('withResponsive()', () => {
         const MockComponentWithResponsive = withResponsive(MockComponent);
 
         render(
-            <ResponsiveProvider>
+            <ResponsiveProvider {...props}>
                 <MockComponentWithResponsive />
             </ResponsiveProvider>
         );
@@ -57,7 +60,7 @@ describe('withResponsive()', () => {
         const MockComponentWithResponsive = withResponsive(MockComponent);
 
         render(
-            <ResponsiveProvider>
+            <ResponsiveProvider {...props}>
                 <MockComponentWithResponsive test={'hello'} myProp={'world'} />
             </ResponsiveProvider>
         );

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`withResponsive() should render correctly 1`] = `
+exports[`withIsMobile() should render correctly 1`] = `
 <DocumentFragment>
   <h1>
     Mock test
