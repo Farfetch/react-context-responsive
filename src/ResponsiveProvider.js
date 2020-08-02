@@ -114,8 +114,8 @@ const ResponsiveProvider = ({
         [currentBreakpoint, currentOrientation, isCalculated, queriesObjects]
     );
 
-    useEffect(() => {
-        if (!process || !process.env || process.env.NODE_ENV !== 'test') {
+    if (process && process.env && process.env.NODE_ENV !== 'production') {
+        useEffect(() => {
             /* eslint-disable no-console */
             console.group(
                 '%c @farfetch/react-context-responsive updated!',
@@ -129,8 +129,8 @@ const ResponsiveProvider = ({
             console.log('%c Context:', 'font-weight:bold;', contextObject);
             console.groupEnd();
             /* eslint-enable no-console */
-        }
-    }, [contextObject, currentBreakpoint]);
+        }, [contextObject, currentBreakpoint]);
+    }
 
     return (
         <ResponsiveContext.Provider value={contextObject}>
