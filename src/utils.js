@@ -37,9 +37,9 @@ export const getQueriesObjects = (currentBreakpointName, breakpoints) => {
     }, defaultQueryObject);
 };
 
-export const getBreakpoints = (mediaQueries, breakpointNames) => {
-    return breakpointNames.map((breakpointName, index) => {
-        return {
+export const getBreakpoints = (mediaQueries, breakpointNames) =>
+    breakpointNames.map(
+        (breakpointName, index) => ({
             mediaType: breakpointName,
             mediaQuery: mediaQueries[breakpointName],
             greaterThan: breakpointNames.filter(
@@ -48,9 +48,9 @@ export const getBreakpoints = (mediaQueries, breakpointNames) => {
             lessThan: breakpointNames.filter(
                 (_ltName, ltIndex) => ltIndex > index
             ),
-        };
-    }, {});
-};
+        }),
+        {}
+    );
 
 export const getMediaqueries = (breakpoints, breakpointsMax, breakpointNames) =>
     breakpointNames.reduce(
