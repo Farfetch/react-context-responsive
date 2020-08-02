@@ -1,7 +1,7 @@
 import { getBreakpoints, getMediaqueries, getQueriesObjects } from './utils';
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import ResponsiveContext from './ResponsiveContext';
 
 const ResponsiveProvider = ({
@@ -20,36 +20,33 @@ const ResponsiveProvider = ({
         defaultOrientation
     );
 
-    const breakpointsWithInitialValue = {
-        _initial: '0em',
-        ...breakpoints,
-    };
+    const _breakpoints = { ...breakpoints };
+    if (!_breakpoints._initial) {
+        _breakpoints._initial = '0em';
+    }
 
-    const breakpointNames = Object.keys(
-        mediaQueries || breakpointsWithInitialValue
-    );
+    const breakpointNames = Object.keys(mediaQueries || _breakpoints);
 
     if (!mediaQueries) {
-        mediaQueries = getMediaqueries(
-            breakpointsWithInitialValue,
-            breakpointsMax,
-            breakpointNames
+        mediaQueries = useMemo(
+            getMediaqueries(_breakpoints, breakpointsMax, breakpointNames),
+            [breakpointNames, breakpointsMax, _breakpoints]
         );
     }
 
-    const breakpointsRef = useRef(
-        getBreakpoints(mediaQueries, breakpointNames)
+    const breakpointsApi = useMemo(
+        getBreakpoints(mediaQueries, breakpointNames),
+        [mediaQueries, _breakpoints]
     );
 
     const queriesObjects = useMemo(
-        () => getQueriesObjects(currentBreakpoint, breakpointsRef.current),
-        [currentBreakpoint, breakpointsRef]
+        () => getQueriesObjects(currentBreakpoint, breakpointsApi),
+        [currentBreakpoint, breakpointsApi]
     );
 
-    // Add event listener for breakpoints
+    // Breakpoint event listener
     useEffect(() => {
-        const breakpoints = breakpointsRef.current;
-        const localMediaQueries = breakpoints.map(
+        const localMediaQueries = breakpointsApi.map(
             (breakpoint) => breakpoint.mediaQuery
         );
         const mediaQueryListsAndListeners = localMediaQueries.map(
@@ -57,13 +54,13 @@ const ResponsiveProvider = ({
                 const mediaQueryList = window.matchMedia(mediaQuery);
 
                 if (mediaQueryList.matches) {
-                    setCurrentBreakpoint(breakpoints[index].mediaType);
+                    setCurrentBreakpoint(breakpointsApi[index].mediaType);
                     setIsCalculated(true);
                 }
 
                 const listener = (event) => {
                     event.matches &&
-                        setCurrentBreakpoint(breakpoints[index].mediaType);
+                        setCurrentBreakpoint(breakpointsApi[index].mediaType);
                 };
 
                 mediaQueryList.addListener(listener);
@@ -79,9 +76,9 @@ const ResponsiveProvider = ({
                 }
             );
         };
-    }, [breakpointsRef]);
+    }, [breakpointsApi]);
 
-    // Add orientation media query
+    // Orientation event listener
     useEffect(() => {
         const setMatchedOrientation = (matches) => {
             setCurrentOrientation(matches ? 'portrait' : 'landscape');
