@@ -168,7 +168,7 @@ The non-hook APIs just expose the `useResponsive` hook with different APIs, for 
 
 ## Contributing
 
-Read the [Contributing guidelines](../docs/CONTRIBUTING.md)
+Read the [Contributing guidelines](./docs/CONTRIBUTING.md)
 
 ### Disclaimer
 
@@ -183,4 +183,4 @@ By sending us your contributions, you are agreeing that your contribution is mad
 
 ## License
 
-[MIT](../docs/LICENSE)
+[MIT](./LICENSE) 
