@@ -6,20 +6,60 @@ on:
       - master
 
 jobs:
+  lint:
+    name: Lint Branch
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Unshallow
+        run: git fetch --unshallow
+      - name: Load Modules
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: Verify Dependencies
+        run: yarn
+        if: steps.cache.outputs.cache-hit != 'true'
+      - name: Lint Code
+        run: yarn lint
+      - name: Lint Commit
+        run: npx commitlint --from=${{github.event.pull_request.base.sha}}
+
   test:
     name: Test Branch
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/checkout@v2
+      - name: Load Modules
+        id: cache
+        uses: actions/cache@v2
         with:
-          node-version: 12
-      - name: Install Dependencies
-        run: yarn install
-      - name: Build
-        run: yarn build
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: Verify Dependencies
+        run: yarn
+        if: steps.cache.outputs.cache-hit != 'true'
       - name: Test
         run: yarn test
-          
+
+  build:
+    name: Build Branch
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Load Modules
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: Verify Dependencies
+        run: yarn
+        if: steps.cache.outputs.cache-hit != 'true'
+      - name: Build
+        run: yarn build
