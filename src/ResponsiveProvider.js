@@ -139,28 +139,39 @@ const ResponsiveProvider = ({
     );
 };
 
+const breakpointsPropTypes = {
+    xs: PropTypes.string,
+    sm: PropTypes.string,
+    md: PropTypes.string,
+    lg: PropTypes.string,
+    xl: PropTypes.string,
+};
+
 ResponsiveProvider.defaultProps = {
     initialMediaType: 'xs',
     defaultOrientation: null,
 };
 
 ResponsiveProvider.propTypes = {
-    initialMediaType: PropTypes.string,
-    defaultOrientation: PropTypes.string,
+    initialMediaType: PropTypes.oneOf([
+        '_initial',
+        'xs',
+        'sm',
+        'md',
+        'lg',
+        'xl',
+    ]),
+    defaultOrientation: PropTypes.oneOf(['landscape', 'portrait']),
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node,
     ]).isRequired,
-    breakpoints: PropTypes.arrayOf(
-        PropTypes.shape({
-            mediaQuery: PropTypes.string,
-            mediaType: PropTypes.string,
-        })
-    ),
-    // eslint-disable-next-line react/forbid-prop-types
-    mediaQueries: PropTypes.any,
-    // eslint-disable-next-line react/forbid-prop-types
-    breakpointsMax: PropTypes.any,
+    breakpoints: PropTypes.exact(breakpointsPropTypes),
+    breakpointsMax: PropTypes.exact(breakpointsPropTypes),
+    mediaQueries: PropTypes.exact({
+        ...breakpointsPropTypes,
+        _initial: PropTypes.string,
+    }),
 };
 
 export default ResponsiveProvider;
