@@ -115,7 +115,7 @@ const ResponsiveProvider = ({
     );
 
     useEffect(() => {
-        if (!process || !process.env || process.env.NODE_ENV !== 'test') {
+        if (process && process.env && process.env.NODE_ENV === 'development') {
             /* eslint-disable no-console */
             console.group(
                 '%c @farfetch/react-context-responsive updated!',

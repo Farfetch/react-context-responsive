@@ -152,23 +152,30 @@ describe('<ResponsiveProvider />', () => {
         expect(listenersRemovedAfterUnmount).toBe(listenersAdded);
     });
 
-    test('should not call console.log in the test environment', () => {
-        window.resizeTo(1024, 768);
+    test.each(
+        ['production', 'test'],
+        'should not call console.log in the % environment',
+        (env) => {
+            process.env.NODE_ENV = env;
+            window.resizeTo(1024, 768);
 
-        render(
-            <ResponsiveProvider {...props}>
-                <div>Test</div>
-            </ResponsiveProvider>
-        );
+            render(
+                <ResponsiveProvider {...props}>
+                    <div>Test</div>
+                </ResponsiveProvider>
+            );
 
-        expect(global.console.group).not.toHaveBeenCalled();
-        expect(global.console.log).not.toHaveBeenCalled();
-        expect(global.console.groupEnd).not.toHaveBeenCalled();
-    });
+            expect(global.console.group).not.toHaveBeenCalled();
+            expect(global.console.log).not.toHaveBeenCalled();
+            expect(global.console.groupEnd).not.toHaveBeenCalled();
 
-    test('should call console.log only outside the test environment', () => {
-        // Set this as prod environment
-        process.env.NODE_ENV = 'dev';
+            // Clean the global changes
+            process.env.NODE_ENV = 'test';
+        }
+    );
+
+    test('should call console.log only for development environment', () => {
+        process.env.NODE_ENV = 'development';
         window.resizeTo(1024, 768);
 
         const { unmount } = render(
