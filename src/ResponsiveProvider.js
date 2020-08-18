@@ -1,7 +1,6 @@
 import { getBreakpoints, getMediaqueries, getQueriesObjects } from './utils';
-import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import ResponsiveContext from './ResponsiveContext';
 
 const ResponsiveProvider = ({

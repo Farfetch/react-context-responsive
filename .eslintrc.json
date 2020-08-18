@@ -53,6 +53,7 @@
             {
                 "forbid": ["any", "array", "object"]
             }
-        ]
+        ],
+        "no-duplicate-imports": 1
     }
 }
