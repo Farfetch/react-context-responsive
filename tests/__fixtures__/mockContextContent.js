@@ -25,5 +25,6 @@ export default {
         xs: false,
     },
     mediaType: 'md',
+    mobileBreakpoint: 'md',
     orientation: 'landscape',
 };
