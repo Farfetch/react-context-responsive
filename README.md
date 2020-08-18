@@ -41,7 +41,8 @@ When possible, use the `withIsMobile` and `useIsMobile` for mobile devices detec
 | children           | node  | yes     | -       | React component |
 | breakpoints        | { xs: string, sm: string, md: string, lg: string, xl: string }  | no    | -       | Min breakpoints     |
 | breakpointsMax     | { xs: string, sm: string, md: string, lg: string, xl: string }  | no    | -       | Max breakpoints |
-| mediaQueries       | { _initial: string, xs: string, sm: string, md: string, lg: string, xl: string }  | no    | -       | Represents the screen media queries `(If this is passed breakpoints and breakpointsMax is obsolete)`  |
+| mediaQueries       | { _initial: string, xs: string, sm: string, md: string, lg: string, xl: string }  | no    | -       | Represents the screen media queries `(If this is passed, breakpoints and breakpointsMax props are obsolete)`  |
+| mobileBreakpoint   | '_initial' <br>&#124;&nbsp; 'xs' <br>&#124;&nbsp; 'sm' <br>&#124;&nbsp; 'md' <br>&#124;&nbsp; 'lg'  <br>&#124;&nbsp;  'xl'  | no    | -       | It's considered mobile until this breakpoint |
 
 ## Object returned by the useResponsive / withResponsive / Responsive:
 
@@ -58,7 +59,7 @@ When possible, use the `withIsMobile` and `useIsMobile` for mobile devices detec
 
 | Key                    | Type    | Description                                                                                  |
 |------------------------|---------|----------------------------------------------------------------------------------------------|
-| isMobile | boolean | If its below the md breakpoint |
+| isMobile | boolean | If it's below the mobile breakpoint defined by mobileBreakpoint |
 | isCalculated           | boolean | False on first render. Once true, it means all breakpoints values are based on the window. |
    
 ## Usage and examples
@@ -73,8 +74,7 @@ The component has five different exported consumption APIs:
 - `withResponsive`: A HoC which passes the responsive data to the `responsive` prop
 - `withIsMobile`: A HoC which passes `isMobile` and `isCalculated` props only
 
-
-### How setup the package
+### How to setup
 
 There are two possible options to configure your responsive provider with `breakpoints` or with `mediaQueries`
 

@@ -28,6 +28,7 @@ Object {
     "xs": true,
   },
   "mediaType": "_initial",
+  "mobileBreakpoint": "md",
   "orientation": "portrait",
 }
 `;
@@ -60,6 +61,7 @@ Object {
     "xs": false,
   },
   "mediaType": "xs",
+  "mobileBreakpoint": "md",
   "orientation": "landscape",
 }
 `;
@@ -92,6 +94,7 @@ Object {
     "xs": false,
   },
   "mediaType": "xs",
+  "mobileBreakpoint": "md",
   "orientation": "portrait",
 }
 `;
@@ -124,6 +127,7 @@ Object {
     "xs": false,
   },
   "mediaType": "xs",
+  "mobileBreakpoint": "md",
   "orientation": "portrait",
 }
 `;
@@ -156,6 +160,7 @@ Object {
     "xs": false,
   },
   "mediaType": "sm",
+  "mobileBreakpoint": "md",
   "orientation": "portrait",
 }
 `;
@@ -188,6 +193,7 @@ Object {
     "xs": false,
   },
   "mediaType": "sm",
+  "mobileBreakpoint": "md",
   "orientation": "landscape",
 }
 `;
@@ -220,6 +226,7 @@ Object {
     "xs": false,
   },
   "mediaType": "md",
+  "mobileBreakpoint": "md",
   "orientation": "landscape",
 }
 `;
@@ -252,6 +259,7 @@ Object {
     "xs": false,
   },
   "mediaType": "md",
+  "mobileBreakpoint": "md",
   "orientation": "portrait",
 }
 `;
@@ -284,6 +292,7 @@ Object {
     "xs": false,
   },
   "mediaType": "lg",
+  "mobileBreakpoint": "md",
   "orientation": "landscape",
 }
 `;
@@ -316,6 +325,7 @@ Object {
     "xs": false,
   },
   "mediaType": "lg",
+  "mobileBreakpoint": "md",
   "orientation": "landscape",
 }
 `;
@@ -348,6 +358,7 @@ Object {
     "xs": false,
   },
   "mediaType": "xl",
+  "mobileBreakpoint": "md",
   "orientation": "landscape",
 }
 `;
@@ -380,6 +391,7 @@ Object {
     "xs": false,
   },
   "mediaType": "md",
+  "mobileBreakpoint": "md",
   "orientation": "landscape",
 }
 `;
@@ -412,6 +424,7 @@ Object {
     "xs": false,
   },
   "mediaType": "xs",
+  "mobileBreakpoint": "md",
   "orientation": null,
 }
 `;
@@ -444,6 +457,7 @@ Object {
     "xs": false,
   },
   "mediaType": "xl",
+  "mobileBreakpoint": "md",
   "orientation": "portrait",
 }
 `;

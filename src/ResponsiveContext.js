@@ -7,6 +7,7 @@ const ResponsiveContext = createContext({
     greaterThan: {},
     is: {},
     orientation: null,
+    mobileBreakpoint: 'md',
 });
 
 export default ResponsiveContext;

@@ -28,11 +28,12 @@ describe('useIsMobile()', () => {
         unmockMatchMedia();
     });
 
-    test('should return the values from the hook correctly, if is desktop', () => {
-        window.resizeTo(1024, 768);
+    test('should return not isMobile when window size md and mobile breakpoint md', () => {
+        const windowSizeMd = 960;
+        window.resizeTo(windowSizeMd, 768);
 
         render(
-            <ResponsiveProvider {...props}>
+            <ResponsiveProvider {...props} mobileBreakpoint="md">
                 <MockComponent>{mockRenderProp}</MockComponent>
             </ResponsiveProvider>
         );
@@ -44,11 +45,46 @@ describe('useIsMobile()', () => {
         });
     });
 
-    test('should return the values from the hook correctly, if is mobile', () => {
-        window.resizeTo(375, 812);
+    test('should return isMobile when window size sm and mobile breakpoint md', () => {
+        const windowSizeSm = 576;
+        window.resizeTo(windowSizeSm, 768);
 
         render(
-            <ResponsiveProvider {...props}>
+            <ResponsiveProvider {...props} mobileBreakpoint="md">
+                <MockComponent>{mockRenderProp}</MockComponent>
+            </ResponsiveProvider>
+        );
+
+        expect(mockRenderProp).toHaveBeenCalledTimes(2);
+        expect(mockRenderProp).toHaveBeenLastCalledWith({
+            isMobile: true,
+            isCalculated: true,
+        });
+    });
+
+    test('should return not isMobile when window size sm and mobile breakpoint sm', () => {
+        const windowSizeSm = 576;
+        window.resizeTo(windowSizeSm, 768);
+
+        render(
+            <ResponsiveProvider {...props} mobileBreakpoint="sm">
+                <MockComponent>{mockRenderProp}</MockComponent>
+            </ResponsiveProvider>
+        );
+
+        expect(mockRenderProp).toHaveBeenCalledTimes(2);
+        expect(mockRenderProp).toHaveBeenLastCalledWith({
+            isMobile: false,
+            isCalculated: true,
+        });
+    });
+
+    test('should return isMobile when window size sm and mobile breakpoint sm', () => {
+        const windowSizeXs = 320;
+        window.resizeTo(windowSizeXs, 768);
+
+        render(
+            <ResponsiveProvider {...props} mobileBreakpoint="sm">
                 <MockComponent>{mockRenderProp}</MockComponent>
             </ResponsiveProvider>
         );

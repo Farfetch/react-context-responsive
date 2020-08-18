@@ -1,9 +1,9 @@
-import { useContext, useMemo } from 'react';
-import ResponsiveContext from './ResponsiveContext';
+import { useMemo } from 'react';
+import useResponsive from './useResponsive';
 
 const useIsMobile = () => {
-    const { isCalculated, lessThan } = useContext(ResponsiveContext);
-    const isMobile = lessThan.md;
+    const { isCalculated, lessThan, mobileBreakpoint } = useResponsive();
+    const isMobile = lessThan[mobileBreakpoint];
 
     return useMemo(() => ({ isMobile, isCalculated }), [
         isMobile,

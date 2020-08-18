@@ -13,6 +13,7 @@ const ResponsiveProvider = ({
     breakpoints,
     breakpointsMax,
     mediaQueries,
+    mobileBreakpoint,
 }) => {
     const breakpointsWithInitialValue = {
         _initial: '0em',
@@ -52,9 +53,16 @@ const ResponsiveProvider = ({
             mediaType: currentMediaType,
             orientation: currentOrientation,
             isCalculated,
+            mobileBreakpoint,
             ...queriesObjects,
         }),
-        [currentMediaType, currentOrientation, isCalculated, queriesObjects]
+        [
+            currentMediaType,
+            currentOrientation,
+            isCalculated,
+            mobileBreakpoint,
+            queriesObjects,
+        ]
     );
 
     useDebugResponsive(contextObject, currentMediaType);
@@ -77,6 +85,7 @@ const breakpointsPropTypes = {
 ResponsiveProvider.defaultProps = {
     initialMediaType: 'xs',
     defaultOrientation: null,
+    mobileBreakpoint: 'md',
 };
 
 ResponsiveProvider.propTypes = {
@@ -99,6 +108,7 @@ ResponsiveProvider.propTypes = {
         ...breakpointsPropTypes,
         _initial: PropTypes.string,
     }),
+    mobileBreakpoint: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
 };
 
 export default ResponsiveProvider;
