@@ -1,5 +1,5 @@
 ---
-name: Issue Template
+name: New Feature
 about: Feature template.
 title: ''
 labels: enhancement

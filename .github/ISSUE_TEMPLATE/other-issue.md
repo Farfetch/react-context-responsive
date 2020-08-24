@@ -1,5 +1,5 @@
 ---
-name: Issue Template
+name: Other Issue
 about: Other issues template.
 title: ''
 labels: ''
