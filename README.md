@@ -34,22 +34,33 @@ The hooks (`useResponsive` and `useIsMobile`) are the preferred method of using 
 When possible, use the `withIsMobile` and `useIsMobile` for mobile devices detection. In the future we might use it to automatically splitting of mobile-only code.
 
 ## ResponsiveProvider Props
-| Prop               | Type    | Description                                                                   |
-| ------------------ | ------- | ----------------------------------------------------------------------------- |
-| initialMediaType   | string  | Used to mock a breakpoint in the initial state calculation. Defaults to 'xs'. |
-| defaultOrientation | string  | Used to mock orientation in initial state calculation. Defaults to null.      |
+| Prop               | Type    | Required | Default | Description                                                                   |
+| ------------------ | ------- | ---------|---------|-------------------------------------------------------------------------------|
+| initialMediaType   | '_initial' <br>&#124;&nbsp; 'xs' <br>&#124;&nbsp; 'sm' <br>&#124;&nbsp; 'md' <br>&#124;&nbsp; 'lg'  <br>&#124;&nbsp;  'xl'| no    | 'xs'       |  Initial media type before the calculation of the real measures  |
+| defaultOrientation | 'landscape' <br>&#124;&nbsp; 'portrait'  | no    | null       | Initial orientation before the calculation of the real measures    |
+| children           | node  | yes     | -       | React component |
+| breakpoints        | { xs: string, sm: string, md: string, lg: string, xl: string }  | no    | -       | Min breakpoints     |
+| breakpointsMax     | { xs: string, sm: string, md: string, lg: string, xl: string }  | no    | -       | Max breakpoints |
+| mediaQueries       | { _initial: string, xs: string, sm: string, md: string, lg: string, xl: string }  | no    | -       | Represents the screen media queries `(If this is passed breakpoints and breakpointsMax is obsolete)`  |
 
-## Object returned by the consumers:
+## Object returned by the useResponsive / withResponsive / Responsive:
 
-| Key                    | Type    | Description                                                                                                                      |
-|------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------|
-| isCalculated           | Boolean | False on first render. Once true, it means all breakpoints values are based on the window.                                       |
-| mediaType              | String  | The current media type (breakpoint) name (ex: `'md'`).                                                                           |
-| lessThan               | Object  | Object containing if current window width is less than a breakpoint (usage: `lessThan.lg`).                                      |
-| greaterThan            | Object  | Object containing if current window width is greater than a breakpoint (usage: `greaterThan.lg`).                                |
-| is                     | Object  | Object containing if current window width is the at a breakpoint (usage: `is.lg`).                                               |
-| orientation            | String  | Current browser orientation (portrait, landscape or defined defaultOrientation at ResponsiveProvider, when others not available) |
+| Key                    | Type    | Description                                                                                  |
+|------------------------|---------|----------------------------------------------------------------------------------------------|
+| mediaType              | '_initial' <br>&#124;&nbsp; 'xs' <br>&#124;&nbsp; 'sm' <br>&#124;&nbsp; 'md' <br>&#124;&nbsp; 'lg'  <br>&#124;&nbsp;  'xl'  | Current breakpoint name|
+| orientation            | string  | Current browser orientation |
+| isCalculated           | boolean | False on first render. Once true, it means all breakpoints values are based on the window. |
+| is                     | { _initial: boolean, xs: boolean, sm: boolean, md: boolean, lg: boolean, xl: boolean }  | Object key breakpoint name and value boolean that shows if width is at a certain breakpoint  |
+| lessThan               | { _initial: boolean, xs: boolean, sm: boolean, md: boolean, lg: boolean, xl: boolean }  | Object key breakpoint name and value boolean that shows if width is less than a certain breakpoint |
+| greaterThan               | { _initial: boolean, xs: boolean, sm: boolean, md: boolean, lg: boolean, xl: boolean }  | Object key breakpoint name and value boolean that shows if width is greater than a certain breakpoint |
 
+## Object returned by the useIsMobile / withIsMobile:
+
+| Key                    | Type    | Description                                                                                  |
+|------------------------|---------|----------------------------------------------------------------------------------------------|
+| isMobile | boolean | If its below the md breakpoint |
+| isCalculated           | boolean | False on first render. Once true, it means all breakpoints values are based on the window. |
+   
 ## Usage and examples
 
 To use the package, you must embrace your code with the `ResponsiveProvider`, following the guidelines.
@@ -62,7 +73,67 @@ The component has five different exported consumption APIs:
 - `withResponsive`: A HoC which passes the responsive data to the `responsive` prop
 - `withIsMobile`: A HoC which passes `isMobile` and `isCalculated` props only
 
-### Rendering components with `useResponsive` hook. (Preferred method)
+
+### How setup the package
+
+There are two possible options to configure your responsive provider with `breakpoints` or with `mediaQueries`
+
+Using `breakpoints` and `breakpointsMax`
+```js
+const breakpoints = {
+  xs: "320px",
+  sm: "576px",
+  md: "960px",
+  lg: "1280px",
+  xl: "1800px"
+};
+
+const breakpointsMax = {
+  xs: "319px",
+  sm: "575px",
+  md: "959px",
+  lg: "1279px",
+  xl: "1799px"
+};
+
+const App = () => {
+    
+    return (
+        <ResponsiveProvider breakpoints={breakpoints} breakpointsMax={breakpointsMax}>
+            <Content />
+        </ResponsiveProvider>
+    );
+};
+
+export default App;
+```
+
+Using `mediaQueries`
+```js
+const mediaQueries = {
+  _initial: "(min-width: 0px) and (max-width: 319px)",
+  xs: "(min-width: 320px) and (max-width: 575px)",
+  sm: "(min-width: 576px) and (max-width: 959px)",
+  md: "(min-width: 960px) and (max-width: 1279px)",
+  lg: "(min-width: 1280px) and (max-width: 1799px)",
+  xl: "(min-width: 1800px)"
+};
+
+const App = () => {
+    
+    return (
+        <ResponsiveProvider mediaQueries={mediaQueries}>
+            <Content />
+        </ResponsiveProvider>
+    );
+};
+
+export default App;
+```
+
+### How to consume the package
+
+#### Rendering components with `useResponsive` hook. (Preferred method)
 
 ```js
 const Greetings = () => {
@@ -78,7 +149,7 @@ const Greetings = () => {
 export default Greetings;
 ```
 
-### Rendering components with `useIsMobile` hook. (Preferred method)
+#### Rendering components with `useIsMobile` hook. (Preferred method)
 
 ```js
 const Greetings = () => {
@@ -94,22 +165,31 @@ const Greetings = () => {
 export default Greetings;
 ```
 
-### Rendering components with `Responsive` render prop component
+#### Rendering components with `Responsive` render prop component
 
 ```js
-<ResponsiveProvider>
-    <App>
-        <Responsive>
-            { (responsive) => ( <Component1 currentBreakpoint={ responsive.mediaType } /> ) }
-        </Responsive>
-        <Responsive>
-            { (responsive) => ( <Component2 orientation={ responsive.orientation } /> ) }
-        </Responsive>
-    </App>
-</ResponsiveProvider>
+
+class Greetings extends Component {
+    render() {
+        return (
+            <ResponsiveProvider>
+                <Content>
+                    <Responsive>
+                        { (responsive) => ( <Component1 currentBreakpoint={ responsive.mediaType } /> ) }
+                    </Responsive>
+                    <Responsive>
+                        { (responsive) => ( <Component2 orientation={ responsive.orientation } /> ) }
+                    </Responsive>
+                </Content>
+            </ResponsiveProvider>
+        )
+    }
+}
+
+export default Greetings;
 ```
 
-### Rendering components with `withResponsive` High-Order component
+#### Rendering components with `withResponsive` High-Order component
 
 ```js
 class Greetings extends Component {
@@ -121,7 +201,7 @@ class Greetings extends Component {
 export default withResponsive(Greetings);
 ```
 
-### Rendering components with `withIsMobile` High-Order component
+#### Rendering components with `withIsMobile` High-Order component
 
 ```js
 class Greetings extends Component {
@@ -144,21 +224,6 @@ It fixes a problem at `redux-responsive` in the calculation:
 If the first breakpoint starts in a number bigger than 0 (let's call it X), it considers that everything between 0 and X as the first breakpoint when it's not true.
 
 For example, our breakpoints start at 320 (XS), `redux-responsive` considers 270 as XS, a wrong calculation. We call it `_initial`.
-
-### The `isPhone` and `isDesktop` deprecation
-If you're migration from the 0.X versions, the `isPhone` and `isDesktop` variables were deprecated.
-
-After some discussions, we decided that maintaining the `isMobile`, `isPhone` and `isDesktop` was useless. 
-
-They were always aliases for predefined breakpoints and still can be done manually.
-
-We kept only the `isMobile` for some reasons:
-1. It can be used for mobile/desktop code splitting in the future, optimizing builds for mobile only;
-2. Per definition, the Mobile Site is just for phones. Tablets are desktop;
-3. The `isMobile` detection is the most common use-case of the provider;
-4. The `isDesktop` is just a negation of the `isMobile`;
-5. They were available just for the `responsive` high-order component; 
-6. You can still do the detection of specific breakpoints using the query objects.
 
 ## React compatibility
 
