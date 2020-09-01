@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/Farfetch/react-context-responsive/compare/v1.0.3...v1.1.0) (2020-09-01)
+
+
+### Features
+
+* remove logs when NODE_ENV != development ([4443d51](https://github.com/Farfetch/react-context-responsive/commit/4443d51ba82586d33ec7b33a2ef22baf6afd5e04))
+
 ### [1.0.3](https://github.com/Farfetch/react-context-responsive/compare/v1.0.2...v1.0.3) (2020-09-01)
 
 
