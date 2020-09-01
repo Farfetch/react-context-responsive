@@ -1,3 +1,10 @@
+### [1.0.3](https://github.com/Farfetch/react-context-responsive/compare/v1.0.2...v1.0.3) (2020-09-01)
+
+
+### Bug Fixes
+
+* change Responsive Provider proptypes ([272a217](https://github.com/Farfetch/react-context-responsive/commit/272a217442cfa53bf591da5fded4bcb0ac4e62f7))
+
 ### [1.0.2](https://github.com/Farfetch/react-context-responsive/compare/v1.0.1...v1.0.2) (2020-08-03)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@farfetch/react-context-responsive",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "A responsive API using React's Context API",
   "license": "MIT",
   "keywords": [
