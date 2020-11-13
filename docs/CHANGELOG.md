@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/Farfetch/react-context-responsive/compare/v1.1.0...v1.2.0) (2020-11-13)
+
+
+### Features
+
+* add mobile breakpoint to contex ([3346577](https://github.com/Farfetch/react-context-responsive/commit/3346577b6675226da0bae38fe55809e85db5a208))
+
 ## [1.1.0](https://github.com/Farfetch/react-context-responsive/compare/v1.0.3...v1.1.0) (2020-09-01)
 
 
