@@ -25,6 +25,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Farfetch/react-context-responsive.git"
+  },
   "scripts": {
     "test": "jest",
     "lint": "eslint src/**/*.js && eslint tests/**/*.js",
