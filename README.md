@@ -1,3 +1,7 @@
+[![license](https://img.shields.io/github/license/Farfetch/react-context-responsive)](LICENSE)
+![publish](https://github.com/Farfetch/React-Context-Responsive/workflows/Publish%20react-context-responsive/badge.svg)
+
+
 # react-context-responsive
 
 A package that provides a responsive context to your application, using React Context API.
