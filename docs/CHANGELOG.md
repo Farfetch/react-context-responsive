@@ -1,3 +1,10 @@
+### [1.2.1](https://github.com/Farfetch/react-context-responsive/compare/v1.2.0...v1.2.1) (2021-01-15)
+
+
+### Bug Fixes
+
+* add publish and license badges to readme ([53fd45f](https://github.com/Farfetch/react-context-responsive/commit/53fd45f128fcda8c4a5dcfa9a39cb006d5e152cd))
+
 ## [1.2.0](https://github.com/Farfetch/react-context-responsive/compare/v1.1.0...v1.2.0) (2020-11-13)
 
 
