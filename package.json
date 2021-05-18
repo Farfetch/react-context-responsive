@@ -20,7 +20,8 @@
   "source": "./src/index.js",
   "files": [
     "lib",
-    "es"
+    "es",
+    "index.d.ts"
   ],
   "publishConfig": {
     "access": "public"
