@@ -1,3 +1,10 @@
+### [1.2.2](https://github.com/Farfetch/react-context-responsive/compare/v1.2.1...v1.2.2) (2021-05-19)
+
+
+### Bug Fixes
+
+* include d.ts in package.json ([a7685f0](https://github.com/Farfetch/react-context-responsive/commit/a7685f0ff6aacd9c2dc856b31714b2a66748134b))
+
 ### [1.2.1](https://github.com/Farfetch/react-context-responsive/compare/v1.2.0...v1.2.1) (2021-01-15)
 
 
