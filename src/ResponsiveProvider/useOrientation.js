@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 
 const useOrientation = (defaultOrientation) => {
-    const [currentOrientation, setCurrentOrientation] = useState(
-        defaultOrientation
-    );
+    const [currentOrientation, setCurrentOrientation] =
+        useState(defaultOrientation);
 
     useEffect(() => {
         const setMatchedOrientation = (matches) => {
