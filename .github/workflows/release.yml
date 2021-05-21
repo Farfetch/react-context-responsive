@@ -1,10 +1,5 @@
 name: Publish react-context-responsive
-
-on:
-  push:
-    branches: 
-      - master
-      - beta
+on: workflow_dispatch
 
 jobs:
   release:
