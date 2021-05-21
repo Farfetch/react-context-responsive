@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/Farfetch/react-context-responsive/compare/v1.2.2...v1.3.0) (2021-05-21)
+
+
+### Features
+
+* update packages ([4cbd67d](https://github.com/Farfetch/react-context-responsive/commit/4cbd67d6717da3a354c6285e7905206f130fafc7))
+
 ### [1.2.2](https://github.com/Farfetch/react-context-responsive/compare/v1.2.1...v1.2.2) (2021-05-19)
 
 
