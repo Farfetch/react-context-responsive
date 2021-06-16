@@ -47,6 +47,7 @@ interface ResponsiveProviderProps {
   breakpoints?: Breakpoints,
   breakpointsMax?: Breakpoints,
   mediaQueries?: MediaQueries,
+  mobileBreakpoint?: BreakpointNames,
 }
 
 interface WithResponsiveProps {
