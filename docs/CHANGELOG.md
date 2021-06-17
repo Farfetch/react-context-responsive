@@ -1,3 +1,15 @@
+## [1.4.0](https://github.com/Farfetch/react-context-responsive/compare/v1.3.0...v1.4.0) (2021-06-17)
+
+
+### Features
+
+* disable cd and enable manual deploys ([50fded1](https://github.com/Farfetch/react-context-responsive/commit/50fded1d9c4e2cffbc67aa4819049e901b9e747d))
+
+
+### Bug Fixes
+
+* add mobileBreakpoint type ([db84728](https://github.com/Farfetch/react-context-responsive/commit/db84728ade78a6d69534571275aae2f36a22de64))
+
 ## [1.3.0](https://github.com/Farfetch/react-context-responsive/compare/v1.2.2...v1.3.0) (2021-05-21)
 
 
