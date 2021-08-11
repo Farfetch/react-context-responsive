@@ -2,11 +2,13 @@ import { useEffect } from 'react';
 
 const useDebugResponsive = (contextObject, currentMediaType) => {
     useEffect(() => {
-        if (
+        const isDevEnv =
             typeof process !== 'undefined' &&
+            process !== null &&
             process.env &&
-            process.env.NODE_ENV === 'development'
-        ) {
+            process.env.NODE_ENV === 'development';
+
+        if (isDevEnv) {
             /* eslint-disable no-console */
             console.group(
                 '%c @farfetch/react-context-responsive updated!',
