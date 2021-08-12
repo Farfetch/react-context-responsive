@@ -1,3 +1,10 @@
+### [1.4.1](https://github.com/Farfetch/react-context-responsive/compare/v1.4.0...v1.4.1) (2021-08-12)
+
+
+### Bug Fixes
+
+* ensures process is not undefined before logging to console ([5ae8ff4](https://github.com/Farfetch/react-context-responsive/commit/5ae8ff4ca7b27bd30d4613858db693ece03262b4))
+
 ## [1.4.0](https://github.com/Farfetch/react-context-responsive/compare/v1.3.0...v1.4.0) (2021-06-17)
 
 
