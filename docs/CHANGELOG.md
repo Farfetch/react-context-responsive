@@ -1,3 +1,10 @@
+## [1.5.0](https://github.com/Farfetch/react-context-responsive/compare/v1.4.1...v1.5.0) (2021-09-01)
+
+
+### Features
+
+* peer dependency support for react v17 ([0287da9](https://github.com/Farfetch/react-context-responsive/commit/0287da961a64ca67fb83544c413c90a06e1098f9))
+
 ### [1.4.1](https://github.com/Farfetch/react-context-responsive/compare/v1.4.0...v1.4.1) (2021-08-12)
 
 
